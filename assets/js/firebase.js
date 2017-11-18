@@ -1,4 +1,4 @@
-console.log("firebase.js loaded");
+console.log("firebase.js loaded - questions fixed");
 
 // Initialize Firebase
 var config = {
@@ -22,7 +22,7 @@ database.ref("/scores").orderByChild("high_score").limitToLast(1).on("value", fu
 
   var arr = Object.keys(snapshot.val());
   var highScore = snapshot.val()[arr[0]].high_score;
-  // console.log("highScore:", highScore);
+  console.log("highScore:", highScore);
 
   $("#highestScore").html(highScore);
 
@@ -43,7 +43,7 @@ var displayName = "";
 var highestScore = "";
 
 //api links
-var easyURL = "https://opentdb.com/api.php?amount=12&category=9&difficulty=easy&type=multiple";
+var easyURL = "https://opentdb.com/api.php?amount=12&category=9&difficulty=easy&type=multiple"
 
 var mediumURL = "https://opentdb.com/api.php?amount=6&category=9&difficulty=medium&type=multiple";
 
@@ -63,18 +63,18 @@ $.ajax({
 
   // after the data request
   .done(function(response) {
-    // console.log(response);
+    console.log(response);
 
     //storing the array of results in the variable
     var results = response.results;
-    // console.log("easy" + JSON.stringify(results));
+    console.log("easy" + JSON.stringify(results));
 
     for (var i = 0; i < results.length; i++) {
-      // console.log(results[i].question);
-      var easy = $("button");
-      easy.attr("data-question", results[i].question);
+      console.log(results[i].question);
+      var easy = $("button")
+      easy.attr("data-question", results[i].question)
 
-      // console.log(results[i].correct_answer);
+      console.log(results[i].correct_answer);
 
     }
   });
@@ -86,18 +86,18 @@ $.ajax({
 
   // after the data request
   .done(function(response) {
-    // console.log(response);
+    console.log(response);
 
     //storing the array of results in the variable
     var results = response.results;
-    // console.log("medium" + JSON.stringify(results));
+    console.log("medium" + JSON.stringify(results));
 
     for (var i = 0; i < results.length; i++) {
-      // console.log(results[i].question);
-      var medium = $("button");
-      medium.attr("data-question", results[i].question);
+      console.log(results[i].question);
+      var medium = $("button")
+      medium.attr("data-question", results[i].question)
 
-      // console.log(results[i].correct_answer);
+      console.log(results[i].correct_answer);
 
     }
   });
@@ -109,18 +109,18 @@ $.ajax({
 
   // after the data request
   .done(function(response) {
-    // console.log(response);
+    console.log(response);
 
     //storing the array of results in the variable
     var results = response.results;
-    // console.log("hard" + JSON.stringify(results));
+    console.log("hard" + JSON.stringify(results));
 
     for (var i = 0; i < results.length; i++) {
-      // console.log(results[i].question);
-      var hard = $("button");
-      hard.attr("data-question", results[i].question);
+      console.log(results[i].question);
+      var hard = $("button")
+      hard.attr("data-question", results[i].question)
 
-      // console.log(results[i].correct_answer);
+      console.log(results[i].correct_answer);
 
     }
   });

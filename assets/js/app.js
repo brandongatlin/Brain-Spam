@@ -41,7 +41,7 @@ function getQuestion() {
   }).done(function(response) {
 
     results = response.results;
-    // console.log(results);
+    console.log(results);
 
     // Storing the question data
     question = response.results["0"].question;
@@ -118,8 +118,6 @@ $(document).on("click", "li.answers", function() {
   }
 });
 
-
-
 function shuffle(array) {
   var currentIndex = array.length,
     temporaryValue, randomIndex;
@@ -166,6 +164,7 @@ $("#gameGrid").on("click", ".gameButton", function() {
   ];
 
 }); //END $("gameButton").click
+
 function makeUL(array) {
   // Create the list element:
   var list = document.createElement("ul");
@@ -188,7 +187,7 @@ function makeUL(array) {
 }
 
 function resetGame() {
-  $("#gameGrid").html('<tr><td><button class="gameButton easy" data-points="100">$100</button></td><td><button class="gameButton easy" data-points="100">$100</button></td><td><button class="gameButton easy" data-points="100">$100</button></td><td><button class="gameButton easy" data-points="100">$100</button></td><td><button class="gameButton easy" data-points="100">$100</button></td><td><button class="gameButton easy" data-points="100">$100</button></td></tr><tr><td><button class="gameButton easy" data-points="200">$200</button></td><td><button class="gameButton easy" data-points="200">$200</button></td><td><button class="gameButton easy" data-points="200">$200</button></td><td><button class="gameButton easy" data-points="200">$200</button></td><td><button class="gameButton easy" data-points="200">$200</button></td><td><button class="gameButton easy" data-points="200">$200</button></td></tr><tr><td><button class="gameButton medium" data-points="300">$300</button></td><td><button class="gameButton medium" data-points="300">$300</button></td><td><button class="gameButton medium" data-points="300">$300</button></td><td><button class="gameButton medium" data-points="300">$300</button></td><td><button class="gameButton medium" data-points="300">$300</button></td><td><button class="gameButton medium" data-points="300">$300</button></td></tr><tr><td><button class="gameButton medium" data-points="400">$400</button></td><td><button class="gameButton medium" data-points="400">$400</button></td><td><button class="gameButton medium" data-points="400">$400</button></td><td><button class="gameButton medium" data-points="400">$400</button></td><td><button class="gameButton medium" data-points="400">$400</button></td><td><button class="gameButton medium" data-points="400">$400</button></td></tr><tr><td><button class="gameButton hard" data-points="500">$500</button></td><td><button class="gameButton hard" data-points="500">$500</button></td><td><button class="gameButton hard" data-points="500">$500</button></td><td><button class="gameButton hard" data-points="500">$500</button></td><td><button class="gameButton hard" data-points="500">$500</button></td><td><button class="gameButton hard" data-points="500">$500</button></td></tr><tr><td><button class="gameButton hard" data-points="600">$600</button></td><td><button class="gameButton hard" data-points="600">$600</button></td><td><button class="gameButton hard" data-points="600">$600</button></td><td><button class="gameButton hard" data-points="600">$600</button></td><td><button class="gameButton hard" data-points="600">$600</button></td><td><button class="gameButton hard" data-points="600">$600</button></td></tr>');
+  $("#gameGrid").html('<tr><td><button class="gameButton easy" data-points="100">$100</button></td><td><button class="gameButton easy" data-points="100">$100</button></td><td><button class="gameButton easy" data-points="100">$100</button></td><td><button class="gameButton easy" data-points="100">$100</button></td><td><button class="gameButton easy" data-points="100">$100</button></td><td><button class="gameButton easy" data-points="100">$100</button></td></tr><tr><td><button class="gameButton easy" data-points="200">$200</button></td><td><button class="gameButton easy" data-points="200">$200</button></td><td><button class="gameButton easy" data-points="200">$200</button></td><td><button class="gameButton easy" data-points="200">$200</button></td><td><button class="gameButton easy" data-points="200">$200</button></td><td><button class="gameButton easy" data-points="200">$200</button></td></tr><tr><td><button class="gameButton medium" data-points="300">$300</button></td><td><button class="gameButton medium" data-points="300">$300</button></td><td><button class="gameButton medium" data-points="300">$300</button></td><td><button class="gameButton medium" data-points="300">$300</button></td><td><button class="gameButton medium" data-points="300">$300</button></td><td><button class="gameButton medium" data-points="300">$300</button></td></tr><tr><td><button class="gameButton medium" data-points="400">$400</button></td><td><button class="gameButton medium" data-points="400">$400</button></td><td><button class="gameButton medium" data-points="400">$400</button></td><td><button class="gameButton medium" data-points="400">$400</button></td><td><button class="gameButton medium" data-points="400">$400</button></td><td><button class="gameButton medium" data-points="400">$400</button></td></tr><tr><td><button class="gameButton hard" data-points="500">$500</button></td><td><button class="gameButton hard" data-points="500">$500</button></td><td><button class="gameButton hard" data-points="500">$500</button></td><td><button class="gameButton hard" data-points="500">$500</button></td><td><button class="gameButton hard" data-points="500">$500</button></td><td><button class="gameButton hard" data-points="500">$500</button></td></tr><tr><td><button class="gameButton hard" data-points="600">$600</button></td><td><button class="gameButton hard" data-points="600">$600</button></td><td><button class="gameButton hard" data-points="600">$600</button></td><td><button class="gameButton hard" data-points="600">$600</button></td><td><button class="gameButton hard" data-points="600">$600</button></td><td><button class="gameButton hard" data-points="600">$600</button></td></tr>')
 
   $(".correctOrWrongText").empty();
   $("#playerScore").empty();
