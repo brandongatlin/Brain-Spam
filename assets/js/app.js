@@ -95,7 +95,10 @@ $(document).on("click", "li.answers", function() {
     $(".correctOrWrongText").text("CORRECT!");
     $(".correctOrWrongText").css("text-align", "center");
     $(".correctOrWrongText").css("color", "lime");
-    // alert("correct!");
+    $(".correctOrWrongText").addClass("animated bounce");
+    // $(".correctOrWrongText").addClass("animated slideOutRight");
+    $("#playerScore").addClass("animated bounce");
+    $("#playerScore").css("color", "lime");
 
     console.log("point value: " + pointValue);
     playerScore = playerScore + pointValue;
@@ -107,6 +110,10 @@ $(document).on("click", "li.answers", function() {
     $(".correctOrWrongText").text("WRONG!");
     $(".correctOrWrongText").css("text-align", "center");
     $(".correctOrWrongText").css("color", "red");
+    $(".correctOrWrongText").addClass("animated bounce");
+    $("#playerScore").addClass("animated bounce");
+
+
     // alert("wrong!");
 
     console.log("point value: -" + pointValue);
@@ -137,7 +144,7 @@ function shuffle(array) {
   return array;
 }
 
-$("#gameGrid").on("click", ".gameButton", function() {
+$("#tableContainer").on("click", ".gameButton", function() {
   $(".correctOrWrongText").empty();
   // **** THIS MERGED FROM OTHER .click *********
   $(this).prop('disabled', true);
@@ -187,9 +194,10 @@ function makeUL(array) {
 }
 
 function resetGame() {
-  $("#gameGrid").html('<tr><td><button class="gameButton easy" data-points="100">$100</button></td><td><button class="gameButton easy" data-points="100">$100</button></td><td><button class="gameButton easy" data-points="100">$100</button></td><td><button class="gameButton easy" data-points="100">$100</button></td><td><button class="gameButton easy" data-points="100">$100</button></td><td><button class="gameButton easy" data-points="100">$100</button></td></tr><tr><td><button class="gameButton easy" data-points="200">$200</button></td><td><button class="gameButton easy" data-points="200">$200</button></td><td><button class="gameButton easy" data-points="200">$200</button></td><td><button class="gameButton easy" data-points="200">$200</button></td><td><button class="gameButton easy" data-points="200">$200</button></td><td><button class="gameButton easy" data-points="200">$200</button></td></tr><tr><td><button class="gameButton medium" data-points="300">$300</button></td><td><button class="gameButton medium" data-points="300">$300</button></td><td><button class="gameButton medium" data-points="300">$300</button></td><td><button class="gameButton medium" data-points="300">$300</button></td><td><button class="gameButton medium" data-points="300">$300</button></td><td><button class="gameButton medium" data-points="300">$300</button></td></tr><tr><td><button class="gameButton medium" data-points="400">$400</button></td><td><button class="gameButton medium" data-points="400">$400</button></td><td><button class="gameButton medium" data-points="400">$400</button></td><td><button class="gameButton medium" data-points="400">$400</button></td><td><button class="gameButton medium" data-points="400">$400</button></td><td><button class="gameButton medium" data-points="400">$400</button></td></tr><tr><td><button class="gameButton hard" data-points="500">$500</button></td><td><button class="gameButton hard" data-points="500">$500</button></td><td><button class="gameButton hard" data-points="500">$500</button></td><td><button class="gameButton hard" data-points="500">$500</button></td><td><button class="gameButton hard" data-points="500">$500</button></td><td><button class="gameButton hard" data-points="500">$500</button></td></tr><tr><td><button class="gameButton hard" data-points="600">$600</button></td><td><button class="gameButton hard" data-points="600">$600</button></td><td><button class="gameButton hard" data-points="600">$600</button></td><td><button class="gameButton hard" data-points="600">$600</button></td><td><button class="gameButton hard" data-points="600">$600</button></td><td><button class="gameButton hard" data-points="600">$600</button></td></tr>')
+
+  $("#tableContainer").html('<div class="row"> <div class="col-md-2"> <div class="gameButton easy animated bounceInLeft" data-points="100"> $100 </div> </div><div class="col-md-2"> <div class="gameButton easy animated bounceInLeft" data-points="100"> $100 </div> </div><div class="col-md-2"> <div class="gameButton easy animated bounceInRight" data-points="100"> $100 </div> </div><div class="col-md-2"> <div class="gameButton easy animated bounceInLeft" data-points="100"> $100 </div> </div><div class="col-md-2"> <div class="gameButton easy animated bounceInRight" data-points="100"> $100 </div> </div><div class="col-md-2"> <div class="gameButton easy animated bounceInLeft" data-points="100"> $100 </div> </div> </div><div class="row"> <div class="col-md-2"> <div class="gameButton medium animated bounceInRight" data-points="200"> $200 </div> </div><div class="col-md-2"> <div class="gameButton medium animated bounceInLeft" data-points="200"> $200 </div> </div><div class="col-md-2"> <div class="gameButton medium animated bounceInLeft" data-points="200"> $200 </div> </div><div class="col-md-2"> <div class="gameButton medium animated bounceInRight" data-points="200"> $200 </div> </div><div class="col-md-2"> <div class="gameButton medium animated bounceInLeft" data-points="200"> $200 </div> </div><div class="col-md-2"> <div class="gameButton medium animated bounceInRight" data-points="200"> $200 </div> </div> </div><div class="row"> <div class="col-md-2"> <div class="gameButton hard animated bounceInLeft" data-points="300"> $300 </div> </div><div class="col-md-2"> <div class="gameButton hard animated bounceInRight" data-points="300"> $300 </div> </div><div class="col-md-2"> <div class="gameButton hard animated bounceInLeft" data-points="300"> $300 </div> </div><div class="col-md-2"> <div class="gameButton hard animated bounceInLeft" data-points="300"> $300 </div> </div><div class="col-md-2"> <div class="gameButton hard animated bounceInRight" data-points="300"> $300 </div> </div><div class="col-md-2"> <div class="gameButton hard animated bounceInLeft" data-points="300"> $300 </div> </div> </div>');
 
   $(".correctOrWrongText").empty();
   $("#playerScore").empty();
 
-}
+} // end reset game function

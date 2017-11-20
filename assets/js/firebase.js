@@ -63,18 +63,18 @@ $.ajax({
 
   // after the data request
   .done(function(response) {
-    console.log(response);
+    // console.log(response);
 
     //storing the array of results in the variable
     var results = response.results;
-    console.log("easy" + JSON.stringify(results));
+    // console.log("easy" + JSON.stringify(results));
 
     for (var i = 0; i < results.length; i++) {
-      console.log(results[i].question);
+      // console.log(results[i].question);
       var easy = $("button")
       easy.attr("data-question", results[i].question)
 
-      console.log(results[i].correct_answer);
+      // console.log(results[i].correct_answer);
 
     }
   });
@@ -86,18 +86,18 @@ $.ajax({
 
   // after the data request
   .done(function(response) {
-    console.log(response);
+    // console.log(response);
 
     //storing the array of results in the variable
     var results = response.results;
-    console.log("medium" + JSON.stringify(results));
+    // console.log("medium" + JSON.stringify(results));
 
     for (var i = 0; i < results.length; i++) {
-      console.log(results[i].question);
-      var medium = $("button")
-      medium.attr("data-question", results[i].question)
+      // console.log(results[i].question);
+      var medium = $("button");
+      medium.attr("data-question", results[i].question);
 
-      console.log(results[i].correct_answer);
+      // console.log(results[i].correct_answer);
 
     }
   });
@@ -113,14 +113,14 @@ $.ajax({
 
     //storing the array of results in the variable
     var results = response.results;
-    console.log("hard" + JSON.stringify(results));
+    // console.log("hard" + JSON.stringify(results));
 
     for (var i = 0; i < results.length; i++) {
-      console.log(results[i].question);
-      var hard = $("button")
-      hard.attr("data-question", results[i].question)
+      // console.log(results[i].question);
+      var hard = $("button");
+      hard.attr("data-question", results[i].question);
 
-      console.log(results[i].correct_answer);
+      // console.log(results[i].correct_answer);
 
     }
   });
