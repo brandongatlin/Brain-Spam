@@ -194,7 +194,7 @@ $("#logOffFacebook").on("click", function() {
 
     $("#player1").html("Player Name");
     $("#facebookBtn").show();
-    $("#logOffFacebook").hide();
+    // $("#logOffFacebook").hide();
 
 
     // Sign-out successful.
