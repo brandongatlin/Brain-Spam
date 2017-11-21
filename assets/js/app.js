@@ -27,7 +27,7 @@ function getQuestion() {
 
   // The Function that renders the Question with Answer Choices
   var question = $(this).attr("data-name");
-  var queryURL = "https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple";
+  var queryURL = "https://opentdb.com/api.php?amount=1&category=20&type=multiple";
 
   // Creating an AJAX call for the specific game baord button being clicked
   $.ajax({
@@ -57,7 +57,6 @@ function getQuestion() {
     var choicesOrder = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3];
     // console.log(choicesOrder)
 
-    $("#gameGrid").hide();
     var questionDiv = $("<div>");
     questionDiv.addClass("question");
     questionDiv.html(response.results["0"].question);
@@ -84,20 +83,18 @@ $(document).on("click", "li.answers", function() {
 
   if (usersGuess === correctAnswer) {
 
-
+    $("this").css("color", "pink");
     $(".correctOrWrongText").text("CORRECT!");
     $(".correctOrWrongText").css("text-align", "center");
     $(".correctOrWrongText").css("color", "lime");
     $(".correctOrWrongText").addClass("animated bounce");
-    // $(".correctOrWrongText").addClass("animated slideOutRight");
     $("#playerScore").addClass("animated bounce");
     $("#playerScore").css("color", "lime");
 
-    console.log("point value: " + pointValue);
+    // console.log("point value: " + pointValue);
     playerScore = playerScore + pointValue;
     $("#choices-div").empty();
     $("#question").empty();
-    $("#gameGrid").show();
     $("#playerScore").html(playerScore);
   } else {
     $(".correctOrWrongText").text("WRONG!");
@@ -113,7 +110,6 @@ $(document).on("click", "li.answers", function() {
     playerScore = playerScore - pointValue;
     $("#choices-div").empty();
     $("#question").empty();
-    $("#gameGrid").show();
     $("#playerScore").html(playerScore);
   }
 });
