@@ -18,7 +18,7 @@ database.ref("/scores").orderByChild("high_score").limitToLast(1).on("value", fu
   var highScore = snapshot.val()[arr[0]].high_score;
   // console.log("highScore:", highScore);
 
-  $("#highestScore").html(highScore);
+  $("#allTimeHigh").html(highScore);
 
 });
 
