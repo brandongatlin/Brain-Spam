@@ -169,6 +169,7 @@ $("#facebookBtn").on("click", function() {
   console.log(loginObj);
 
   loginData.push(loginObj);
+  $("#logOffFacebook").toggle();
 });
 
 $("#logOffFacebook").on("click", function() {
@@ -189,6 +190,8 @@ $("#logOffFacebook").on("click", function() {
     reset();
 
     $("#player1").html("Player Name");
+    $("#facebookBtn").toggle();
+
     // $("#logOffFacebook").hide();
 
 
