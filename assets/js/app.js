@@ -1,3 +1,5 @@
+$("#logOffFacebook").hide();
+
 // Clicking the Start Button will Start the Game
 $("#startBtn").on("click", function() {
   resetGame();
