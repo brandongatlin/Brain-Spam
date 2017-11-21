@@ -2,7 +2,7 @@
   padding: 5px;
 }
 .col-md-2 {
-border: 1px solid black;
+  border: 1px solid black;
 }
 
 .col-md-8 {
@@ -17,7 +17,7 @@ border: 1px solid black;
   color: red;
 }
 
-#jam {
+#spam {
   color: blue;
 
 }
@@ -46,14 +46,18 @@ border: 1px solid black;
 
 #resetBtn {
   width:100px;
-  display: inline-block;
   margin-top: 5px;
 
 }
 
-#startBtn-container {
+.wrapper {
   text-align: center;
 }
 
 #playerScore {
+}
+
+.Btn {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }

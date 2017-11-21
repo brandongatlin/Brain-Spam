@@ -1,18 +1,13 @@
-// This hides The Game until the Start Button is Clicked On
-// $("#gameGrid").hide();
-
 // Clicking the Start Button will Start the Game
 $("#startBtn").on("click", function() {
-  // $("#gameGrid").show();
-  // $("#startBtn").hide();
   resetGame();
   playerScore = 0;
 });
+
 $("#resetBtn").on("click", function() {
   resetGame();
   playerScore = 0;
 });
-
 
 var numberOfQuestions = 30;
 
@@ -68,8 +63,6 @@ function getQuestion() {
     questionDiv.html(response.results["0"].question);
     $(".question").html(question);
 
-
-
     var choices = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3];
     var arr = shuffle(choices);
     //console.log(arr);
@@ -111,10 +104,10 @@ $(document).on("click", "li.answers", function() {
     $(".correctOrWrongText").css("text-align", "center");
     $(".correctOrWrongText").css("color", "red");
     $(".correctOrWrongText").addClass("animated bounce");
+    $("#playerScore").css("color", "red");
     $("#playerScore").addClass("animated bounce");
 
 
-    // alert("wrong!");
 
     console.log("point value: -" + pointValue);
     playerScore = playerScore - pointValue;
@@ -146,10 +139,15 @@ function shuffle(array) {
 
 $("#tableContainer").on("click", ".gameButton", function() {
   $(".correctOrWrongText").empty();
-  // **** THIS MERGED FROM OTHER .click *********
   $(this).prop('disabled', true);
   $(this).css("background-color", "#0069D9");
   $(this).css("border-color", "white");
+  $("#playerScore").css("color", "black");
+  $("#playerScore").removeClass("animated bounce");
+  $(".correctOrWrongText").removeClass("animated bounce");
+
+
+
 
   // *******************************************
 

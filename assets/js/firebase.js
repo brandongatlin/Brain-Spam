@@ -1,5 +1,3 @@
-console.log("firebase.js loaded - questions fixed");
-
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyCnD00DCXAEUzyEJQVNwA7yI7G5OUstYHs",
@@ -13,24 +11,16 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-
-//high scores
-// Initialize Firebase
-
 database.ref("/scores").orderByChild("high_score").limitToLast(1).on("value", function(snapshot) {
 
 
   var arr = Object.keys(snapshot.val());
   var highScore = snapshot.val()[arr[0]].high_score;
-  console.log("highScore:", highScore);
+  // console.log("highScore:", highScore);
 
   $("#highestScore").html(highScore);
 
-
-
 });
-
-
 
 //begin database js File
 var loginData = database.ref("/login");
@@ -43,11 +33,11 @@ var displayName = "";
 var highestScore = "";
 
 //api links
-var easyURL = "https://opentdb.com/api.php?amount=12&category=9&difficulty=easy&type=multiple"
+var easyURL = "https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple";
 
-var mediumURL = "https://opentdb.com/api.php?amount=6&category=9&difficulty=medium&type=multiple";
+var mediumURL = "https://opentdb.com/api.php?amount=1&difficulty=medium&type=multiple";
 
-var hardURL = "https://opentdb.com/api.php?amount=12&category=9&difficulty=hard&type=multiple";
+var hardURL = "https://opentdb.com/api.php?amount=1&difficulty=hard&type=multiple";
 
 
 // performing our GET request
@@ -55,11 +45,6 @@ $.ajax({
     url: easyURL,
     method: "GET"
   })
-  // // performing our GET request
-  // $.ajax({
-  // url: queryURL,
-  // method: "GET"
-  // })
 
   // after the data request
   .done(function(response) {
@@ -71,8 +56,8 @@ $.ajax({
 
     for (var i = 0; i < results.length; i++) {
       // console.log(results[i].question);
-      var easy = $("button")
-      easy.attr("data-question", results[i].question)
+      var easy = $("button");
+      easy.attr("data-question", results[i].question);
 
       // console.log(results[i].correct_answer);
 

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Brain Jam!</title>
+  <title>Brain Spam!</title>
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
@@ -19,12 +19,13 @@
     <div class="row" id="head-row">
 
       <div class="col-md-2">
+
       </div>
 
       <div class="col-md-8">
         <div>
           <h1 class="animated slideInLeft" id="brain">Brain</h1>
-          <h1 class="animated slideInRight" id="jam">Jam</h1>
+          <h1 class="animated slideInRight" id="spam">Spam</h1>
         </div>
       </div>
 
@@ -37,8 +38,10 @@
     <div class="row" id="body-row">
       <div class="col-md-2">
         <div class="wrapper" id="startBtn-container">
-          <button id="startBtn">START</button>
-          <button id="resetBtn">RESET</button>
+          <button class="Btn" id="startBtn">START</button>
+          <button class="Btn" id="resetBtn">RESET</button>
+          <button class="Btn loginBtn loginBtn-facebook" id="facebookBtn">Login with Facebook</button>
+          <button class="Btn loginBtn loginBtn-facebook" id="logOffFacebook">Log off</button>
         </div>
       </div>
 
@@ -59,8 +62,8 @@
 
 
       <div class="col-md-2">
-        <div id="score-container">
-          <p>Scores</p>
+        <div class="wrapper" id="score-container">
+          <h5>SCORES:</h5>
           <p>Player Score</p>
           <p id="playerScore">
           </p>
@@ -80,76 +83,12 @@
 
 
 
-
-
-
-
-
-
-    <!-- <div class="row titleRow">
-      <div class="col-md-12">
-        <div id="title">
-          <h1>BRAIN JAM!</h1>
-        </div>
-      </div>
-    </div>
-
-    <div class="row startBtnRow">
-      <div class="col-md-12">
-        <button id="startBtn">START</button>
-        <button id="resetBtn">RESET</button>
-      </div>
-    </div>
-
-    <div class="row facebook-login-row">
-      <div class="col-md-12">
-        <button class="loginBtn loginBtn-facebook" id="facebookBtn">Login with Facebook</button>
-        <button class="loginBtn loginBtn-facebook" id="logOffFacebook">Log off</button>
-      </div>
-    </div>
-
-    <div id="playerAndScore" class="container">
-      <div class="row scoreRow">
-        <div class="col-md-12">
-          <h3 id="player1">Player Name</h3>
-          <p>SCORE</p>
-          <h3 id="playerScore">0</h3>
-          <p>Your Highest Score</p>
-          <h3 id="playerBest">0</h3>
-          <p>Highest All Time Score</p>
-          <h3 id="highestScore">0</h3>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <div>
-          <p class="correctOrWrongText"></p>
-        </div>
-        <div class="question-popup" id="question-div"></div>
-        <div class="question" id="question"></div>
-        <div id="choices-div"></div>
-      </div>
-    </div>
-
-    <div class="row gameRow">
-      <div class="col-md-12">
-        <table>
-          <tbody id="gameGrid">
-          </tbody>
-        </table>
-      </div> -->
-  </div>
-  <!-- Close Continer-->
-
-  <!-- JavaScript Files -->
-  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-  <script src="assets/js/app.js"></script>
-  <script src="assets/js/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/firebase.js"></script>
 
 </body>
 
