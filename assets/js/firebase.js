@@ -123,7 +123,6 @@ firebase.auth().getRedirectResult().then(function(result) {
     console.log(token);
     displayName = result.user.displayName;
     $("#player1").html(displayName);
-    $("#facebookBtn").hide();
 
 
     //order result by value to get highest score
@@ -165,9 +164,6 @@ firebase.auth().signOut().then(function() {
 
 $("#facebookBtn").on("click", function() {
   firebase.auth().signInWithRedirect(provider);
-  $("#facebookBtn").hide();
-  $("#logOffFacebook").show();
-
 
 
   console.log(loginObj);
@@ -193,7 +189,6 @@ $("#logOffFacebook").on("click", function() {
     reset();
 
     $("#player1").html("Player Name");
-    $("#facebookBtn").show();
     // $("#logOffFacebook").hide();
 
 
