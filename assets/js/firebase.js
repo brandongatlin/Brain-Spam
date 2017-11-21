@@ -123,6 +123,8 @@ firebase.auth().getRedirectResult().then(function(result) {
     console.log(token);
     displayName = result.user.displayName;
     $("#player1").html(displayName);
+    $("#facebookBtn").hide();
+
 
     //order result by value to get highest score
 

@@ -193,5 +193,7 @@ function resetGame() {
 
   $(".correctOrWrongText").empty();
   $("#playerScore").empty();
+  $("#logOffFacebook").hide();
+
 
 } // end reset game function
