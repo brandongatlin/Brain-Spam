@@ -164,12 +164,14 @@ firebase.auth().signOut().then(function() {
 
 $("#facebookBtn").on("click", function() {
   firebase.auth().signInWithRedirect(provider);
+  $("#facebookBtn").hide();
+  $("#logOffFacebook").show();
+
 
 
   console.log(loginObj);
 
   loginData.push(loginObj);
-  $("#logOffFacebook").toggle();
 });
 
 $("#logOffFacebook").on("click", function() {
@@ -183,14 +185,14 @@ $("#logOffFacebook").on("click", function() {
     };
 
     console.log(scoreObj);
-
+    $("#facebookBtn").show();
+    $("#logOffFacebook").hide();
     scoreData.push(scoreObj);
 
     //reset score to 0 after being pushed to firebase
     reset();
 
     $("#player1").html("Player Name");
-    $("#facebookBtn").toggle();
 
     // $("#logOffFacebook").hide();
 
