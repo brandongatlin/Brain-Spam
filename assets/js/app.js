@@ -1,3 +1,6 @@
+//hide log out button upon page load
+$("#logOffFacebook").hide();
+
 // Clicking the Start Button will Start the Game
 $("#startBtn").on("click", function() {
   resetGame();
@@ -193,7 +196,6 @@ function resetGame() {
 
   $(".correctOrWrongText").empty();
   $("#playerScore").empty();
-  $("#logOffFacebook").hide();
 
 
 } // end reset game function
