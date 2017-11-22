@@ -1,3 +1,4 @@
+console.log("ts1");
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyCnD00DCXAEUzyEJQVNwA7yI7G5OUstYHs",
@@ -222,29 +223,6 @@ firebase.auth().getRedirectResult().then(function(result) {
   var credential = error.credential;
   // ...
 }); //end gh sign in
-
-//start gh sign signOut
-firebase.auth().getRedirectResult().then(function(result) {
-  if (result.credential) {
-    // This gives you a GitHub Access Token. You can use it to access the GitHub API.
-    var token = result.credential.accessToken;
-    displayName = result.user.displayName;
-    $("#player1").html(displayName);
-    $("#ghIn").hide();
-    $("#ghOut").show();
-  }
-  // The signed-in user info.
-  var user = result.user;
-}).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  // The email of the user's account used.
-  var email = error.email;
-  // The firebase.auth.AuthCredential type that was used.
-  var credential = error.credential;
-  // ...
-}); //end gh signOut
 
 //start gh on cick events
 $("#ghIn").on("click", function() {
