@@ -1,4 +1,4 @@
-console.log("ts6");
+console.log("ts7");
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyCnD00DCXAEUzyEJQVNwA7yI7G5OUstYHs",
@@ -115,6 +115,7 @@ $.ajax({
 
 var loginObj = {
   name: displayName,
+  type: facebook,
   time: firebase.database.ServerValue.TIMESTAMP
 
 };
@@ -228,10 +229,16 @@ firebase.auth().getRedirectResult().then(function(result) {
 //start gh on cick events
 $("#ghIn").on("click", function() {
   firebase.auth().signInWithRedirect(provider2);
-  console.log(loginObj);
-  console.log("gh in success");
+  var loginObj = {
+    name: displayName,
+    type: github,
+    time: firebase.database.ServerValue.TIMESTAMP
+
+  };
   loginData.push(loginObj);
   console.log(result);
+  console.log(loginObj);
+  console.log("gh in success");
   // displayName = result.user.displayName;
   // $("#player1").html(displayName);
 });
