@@ -1,4 +1,4 @@
-console.log("ts5");
+console.log("ts6");
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyCnD00DCXAEUzyEJQVNwA7yI7G5OUstYHs",
@@ -123,7 +123,7 @@ firebase.auth().getRedirectResult().then(function(result) {
     // This gives you a Facebook Access Token. You can use it to access the Facebook API.
     var token = result.credential.accessToken;
     // ...
-    console.log(token);
+    // console.log(token);
     displayName = result.user.displayName;
     $("#player1").html(displayName);
     $("#facebookBtn").hide();
@@ -193,7 +193,7 @@ $("#logOffFacebook").on("click", function() {
     //reset score to 0 after being pushed to firebase
     resetGame();
 
-    $("#player1").html("Player Name");
+    // $("#player1").html("Player Name");
 
     // $("#logOffFacebook").hide();
 
@@ -231,8 +231,9 @@ $("#ghIn").on("click", function() {
   console.log(loginObj);
   console.log("gh in success");
   loginData.push(loginObj);
-  $("#player1").html("Player Name");
-
+  console.log(result);
+  // displayName = result.user.displayName;
+  // $("#player1").html(displayName);
 });
 
 $("#ghOut").on("click", function() {
