@@ -1,4 +1,4 @@
-console.log("ts2");
+console.log("ts3");
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyCnD00DCXAEUzyEJQVNwA7yI7G5OUstYHs",
@@ -203,8 +203,6 @@ $("#logOffFacebook").on("click", function() {
 }); //end log off on click fx
 
 //start github auth
-// firebase.auth().signInWithRedirect(provider2);
-
 firebase.auth().getRedirectResult().then(function(result) {
   if (result.credential) {
     // This gives you a GitHub Access Token. You can use it to access the GitHub API.
