@@ -1,4 +1,4 @@
-console.log("ts7");
+console.log("ts8");
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyCnD00DCXAEUzyEJQVNwA7yI7G5OUstYHs",
@@ -34,6 +34,8 @@ var provider2 = new firebase.auth.GithubAuthProvider();
 
 var displayName = "";
 var highestScore = "";
+var facebook = "";
+var github = "";
 
 //api links
 var easyURL = "https://opentdb.com/api.php?amount=1&difficulty=easy&type=multiple";
