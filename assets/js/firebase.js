@@ -1,4 +1,4 @@
-console.log("ts4");
+console.log("ts5");
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyCnD00DCXAEUzyEJQVNwA7yI7G5OUstYHs",
@@ -191,7 +191,7 @@ $("#logOffFacebook").on("click", function() {
 
 
     //reset score to 0 after being pushed to firebase
-    reset();
+    resetGame();
 
     $("#player1").html("Player Name");
 
@@ -230,8 +230,9 @@ $("#ghIn").on("click", function() {
   firebase.auth().signInWithRedirect(provider2);
   console.log(loginObj);
   console.log("gh in success");
-
   loginData.push(loginObj);
+  $("#player1").html("Player Name");
+
 });
 
 $("#ghOut").on("click", function() {
