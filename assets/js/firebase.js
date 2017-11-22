@@ -29,6 +29,8 @@ var scoreData = database.ref("/scores");
 //auth js File
 
 var provider = new firebase.auth.FacebookAuthProvider();
+var provider2 = new firebase.auth.GithubAuthProvider();
+
 var displayName = "";
 var highestScore = "";
 
@@ -128,9 +130,6 @@ firebase.auth().getRedirectResult().then(function(result) {
 
 
     //order result by value to get highest score
-
-
-
     highestScore = result.scores.high_score;
     $("#highestScore").html(highestScore);
 
@@ -166,10 +165,6 @@ firebase.auth().signOut().then(function() {
 
 $("#facebookBtn").on("click", function() {
   firebase.auth().signInWithRedirect(provider);
-
-
-
-
   console.log(loginObj);
 
   loginData.push(loginObj);
@@ -204,4 +199,46 @@ $("#logOffFacebook").on("click", function() {
     // An error happened.
   });
 
-});
+}); //end log off on click fx
+
+//start github auth
+firebase.auth().signInWithRedirect(provider2);
+
+firebase.auth().getRedirectResult().then(function(result) {
+  if (result.credential) {
+    // This gives you a GitHub Access Token. You can use it to access the GitHub API.
+    var token = result.credential.accessToken;
+    // ...
+  }
+  // The signed-in user info.
+  var user = result.user;
+}).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // The email of the user's account used.
+  var email = error.email;
+  // The firebase.auth.AuthCredential type that was used.
+  var credential = error.credential;
+  // ...
+}); //end gh sign in
+
+//start gh sign signOut
+firebase.auth().getRedirectResult().then(function(result) {
+  if (result.credential) {
+    // This gives you a GitHub Access Token. You can use it to access the GitHub API.
+    var token = result.credential.accessToken;
+    // ...
+  }
+  // The signed-in user info.
+  var user = result.user;
+}).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // The email of the user's account used.
+  var email = error.email;
+  // The firebase.auth.AuthCredential type that was used.
+  var credential = error.credential;
+  // ...
+}); //end gh signOut

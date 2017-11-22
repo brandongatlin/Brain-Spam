@@ -136,6 +136,10 @@ function shuffle(array) {
 }
 
 $("#tableContainer").on("click", ".gameButton", function() {
+  setTimeout(function() {
+    getQuestion();
+  }, 3000);
+
   $(".correctOrWrongText").empty();
   $(this).prop('disabled', true);
   $(this).css("background-color", "#0069D9");
