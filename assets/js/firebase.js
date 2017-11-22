@@ -228,7 +228,10 @@ firebase.auth().getRedirectResult().then(function(result) {
   if (result.credential) {
     // This gives you a GitHub Access Token. You can use it to access the GitHub API.
     var token = result.credential.accessToken;
-    // ...
+    displayName = result.user.displayName;
+    $("#player1").html(displayName);
+    $("#ghIn").hide();
+    $("#ghOut").show();
   }
   // The signed-in user info.
   var user = result.user;
@@ -242,3 +245,34 @@ firebase.auth().getRedirectResult().then(function(result) {
   var credential = error.credential;
   // ...
 }); //end gh signOut
+
+//start gh on cick events
+$("#ghIn").on("click", function() {
+  firebase.auth().signInWithRedirect(provider2);
+  console.log(loginObj);
+  console.log("gh in success");
+
+  loginData.push(loginObj);
+});
+
+$("#ghOut").on("click", function() {
+  firebase.auth().signOut().then(function() {
+
+    var scoreObj = {
+      name: displayName,
+      high_score: playerScore,
+      time: firebase.database.ServerValue.TIMESTAMP
+
+    };
+
+    console.log(scoreObj);
+    $("#ghIn").show();
+    $("#ghOut").hide();
+    scoreData.push(scoreObj);
+    console.log("gh out success");
+
+
+    //reset score to 0 after being pushed to firebase
+    reset();
+  });
+});
