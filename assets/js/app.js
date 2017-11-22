@@ -1,4 +1,6 @@
 $("#logOffFacebook").hide();
+$("#ghOut").hide();
+
 
 // Clicking the Start Button will Start the Game
 $("#startBtn").on("click", function() {
@@ -136,9 +138,9 @@ function shuffle(array) {
 }
 
 $("#tableContainer").on("click", ".gameButton", function() {
-  setTimeout(function() {
-    getQuestion();
-  }, 3000);
+  // setTimeout(function() {
+  //   getQuestion();
+  // }, 3000);
 
   $(".correctOrWrongText").empty();
   $(this).prop('disabled', true);
