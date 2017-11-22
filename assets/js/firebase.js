@@ -1,4 +1,4 @@
-console.log("ts3");
+console.log("ts4");
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyCnD00DCXAEUzyEJQVNwA7yI7G5OUstYHs",
@@ -167,6 +167,8 @@ firebase.auth().signOut().then(function() {
 $("#facebookBtn").on("click", function() {
   firebase.auth().signInWithRedirect(provider);
   console.log(loginObj);
+  console.log("logged in with FB");
+
 
   loginData.push(loginObj);
 });
@@ -185,6 +187,8 @@ $("#logOffFacebook").on("click", function() {
     $("#facebookBtn").show();
     $("#logOffFacebook").hide();
     scoreData.push(scoreObj);
+    console.log("logged Out of FB");
+
 
     //reset score to 0 after being pushed to firebase
     reset();
@@ -195,7 +199,6 @@ $("#logOffFacebook").on("click", function() {
 
 
     // Sign-out successful.
-    console.log("signed out of FB");
   }).catch(function(error) {
     // An error happened.
   });
@@ -249,6 +252,6 @@ $("#ghOut").on("click", function() {
 
 
     //reset score to 0 after being pushed to firebase
-    reset();
+    resetGame();
   });
 });
