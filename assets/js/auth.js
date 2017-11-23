@@ -1,4 +1,4 @@
-console.log("new code loaded 1");
+console.log("new code loaded 2");
 
 // Initialize Firebase
 var config = {
@@ -37,7 +37,7 @@ var loginObj_fb = {
 
 // github loginObject
 var loginObj_gh = {
-  name: displayName,
+  // name: displayName,
   type: github,
   time: firebase.database.ServerValue.TIMESTAMP
 
@@ -53,7 +53,7 @@ var scoreObj_fb = {
 
 //start gh score object
 var scoreObj_gh = {
-  name: displayName,
+  // name: displayName,
   high_score: playerScore,
   time: firebase.database.ServerValue.TIMESTAMP
 
