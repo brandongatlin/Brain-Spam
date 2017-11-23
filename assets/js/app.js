@@ -40,7 +40,7 @@ function getQuestion() {
   }).done(function(response) {
 
     results = response.results;
-    console.log(results);
+    // console.log(results);
 
     // Storing the question data
     question = response.results["0"].question;

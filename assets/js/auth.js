@@ -1,4 +1,4 @@
-console.log("new code loaded 8");
+console.log("new code loaded 9");
 
 // Initialize Firebase
 var config = {
@@ -26,6 +26,13 @@ var highestScore = "";
 var facebook = "facebook";
 var github = "github";
 
+// facebook loginObject
+var loginObj_fb = {
+  name: result.user.displayName,
+  type: facebook,
+  time: firebase.database.ServerValue.TIMESTAMP
+
+}; //end fb loginObject
 
 // github loginObject
 var loginObj_gh = {
@@ -86,13 +93,6 @@ $("#fbIn").on("click", function() {
   firebase.auth().signInWithRedirect(provider_fb);
   console.log("logged in with facebook");
 
-  // facebook loginObject
-  var loginObj_fb = {
-    name: displayName,
-    type: facebook,
-    time: firebase.database.ServerValue.TIMESTAMP
-
-  }; //end fb loginObject
   loginData.push(loginObj_fb);
 
 });
