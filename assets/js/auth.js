@@ -1,4 +1,4 @@
-console.log("new code loaded 7");
+console.log("new code loaded 8");
 
 // Initialize Firebase
 var config = {
@@ -65,7 +65,7 @@ firebase.auth().getRedirectResult().then(function(result) {
     }
     var user = result.user;
     console.log(user.displayName);
-    displayName = (user.displayName);
+    var displayName = (user.displayName);
     $("#allTimeHigh").html(highScore);
     $("#player1").html(displayName);
     // highestScore = result.scores.high_score;
