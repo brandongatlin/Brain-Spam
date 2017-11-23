@@ -1,4 +1,4 @@
-console.log("new code loaded 6");
+console.log("new code loaded 7");
 
 // Initialize Firebase
 var config = {
@@ -66,6 +66,10 @@ firebase.auth().getRedirectResult().then(function(result) {
     var user = result.user;
     console.log(user.displayName);
     displayName = (user.displayName);
+    $("#allTimeHigh").html(highScore);
+    $("#player1").html(displayName);
+    // highestScore = result.scores.high_score;
+    // $("#highestScore").html(highestScore);
   }) //end firebase login sdk
 
   .catch(function(error) {
@@ -88,10 +92,7 @@ $("#fbIn").on("click", function() {
   firebase.auth().signInWithRedirect(provider_fb);
   console.log("logged in with FB");
   loginData.push(loginObj_fb);
-  $("#allTimeHigh").html(highScore);
-  $("#player1").html(displayName);
-  // highestScore = result.scores.high_score;
-  // $("#highestScore").html(highestScore);
+
 });
 
 // log out fb
