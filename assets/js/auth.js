@@ -1,4 +1,4 @@
-console.log("new code loaded 2");
+console.log("new code loaded 3");
 
 // Initialize Firebase
 var config = {
@@ -69,7 +69,6 @@ firebase.auth().getRedirectResult().then(function(result) {
     displayName = user.displayName;
     $("#player1").html(displayName);
 
-    $("#allTimeHigh").html(highScore);
     // highestScore = result.scores.high_score;
     // $("#highestScore").html(highestScore);
   }) //end firebase login sdk
