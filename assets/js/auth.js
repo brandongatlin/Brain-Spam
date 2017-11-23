@@ -1,4 +1,4 @@
-console.log("new code loaded 9");
+console.log("new code loaded 10");
 
 // Initialize Firebase
 var config = {
@@ -28,7 +28,7 @@ var github = "github";
 
 // facebook loginObject
 var loginObj_fb = {
-  name: result.user.displayName,
+  name: displayName,
   type: facebook,
   time: firebase.database.ServerValue.TIMESTAMP
 
