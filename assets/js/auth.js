@@ -27,6 +27,13 @@ var facebook = "facebook";
 var github = "github";
 
 
+// facebook loginObject
+var loginObj_fb = {
+  name: displayName,
+  type: facebook,
+  time: firebase.database.ServerValue.TIMESTAMP
+
+}; //end fb loginObject
 
 // github loginObject
 var loginObj_gh = {
@@ -62,14 +69,6 @@ firebase.auth().getRedirectResult().then(function(result) {
     console.log(user.displayName);
     displayName = user.displayName;
     $("#player1").html(displayName);
-
-    // facebook loginObject
-    var loginObj_fb = {
-      name: displayName,
-      type: facebook,
-      time: firebase.database.ServerValue.TIMESTAMP
-
-    }; //end fb loginObject
 
     // highestScore = result.scores.high_score;
     // $("#highestScore").html(highestScore);
