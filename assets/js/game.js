@@ -59,8 +59,6 @@ $.ajax({
     }
   }); //end of .done hard fx
 
-
-
 //start write high score to score box
 database.ref("/scores").orderByChild("high_score").limitToLast(1).on("value", function(snapshot) {
 

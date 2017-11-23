@@ -1,4 +1,4 @@
-console.log("new code loaded2");
+console.log("new code loaded3");
 
 // Initialize Firebase
 var config = {
@@ -64,7 +64,7 @@ firebase.auth().getRedirectResult().then(function(result) {
       var token = result.credential.accessToken;
     }
     var user = result.user;
-    console.log(user);
+    console.log(user.displayName);
   }) //end firebase login sdk
 
   .catch(function(error) {
