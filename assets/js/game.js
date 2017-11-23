@@ -65,9 +65,7 @@ database.ref("/scores").orderByChild("high_score").limitToLast(1).on("value", fu
   var arr = Object.keys(snapshot.val());
   var highScore = snapshot.val()[arr[0]].high_score;
 
-  $("#allTimeHigh").html(highScore);
-  // highestScore = result.scores.high_score;
-  // $("#highestScore").html(highestScore);
+
 
 }); //end write high score to scorebox
 
