@@ -1,4 +1,3 @@
-console.log("ts9");
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyCnD00DCXAEUzyEJQVNwA7yI7G5OUstYHs",
@@ -12,16 +11,15 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
+//start write high score to score box
 database.ref("/scores").orderByChild("high_score").limitToLast(1).on("value", function(snapshot) {
-
 
   var arr = Object.keys(snapshot.val());
   var highScore = snapshot.val()[arr[0]].high_score;
-  // console.log("highScore:", highScore);
 
   $("#allTimeHigh").html(highScore);
 
-});
+}); //end write high score to scorebox
 
 //begin database js File
 var loginData = database.ref("/login");
@@ -67,7 +65,7 @@ $.ajax({
       // console.log(results[i].correct_answer);
 
     }
-  });
+  }); //end of .done f
 
 $.ajax({
     url: mediumURL,
@@ -122,42 +120,43 @@ var loginObj = {
 
 };
 firebase.auth().getRedirectResult().then(function(result) {
-  if (result.credential) {
-    // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-    var token = result.credential.accessToken;
-    // ...
-    // console.log(token);
-    displayName = result.user.displayName;
-    $("#player1").html(displayName);
-    $("#facebookBtn").hide();
-    $("#logOffFacebook").show();
+    if (result.credential) {
+      // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+      var token = result.credential.accessToken;
+      // ...
+      // console.log(token);
+      displayName = result.user.displayName;
+      $("#player1").html(displayName);
+      $("#facebookBtn").hide();
+      $("#logOffFacebook").show();
 
 
-    //order result by value to get highest score
-    highestScore = result.scores.high_score;
-    $("#highestScore").html(highestScore);
+      //order result by value to get highest score
+      highestScore = result.scores.high_score;
+      $("#highestScore").html(highestScore);
 
-    console.log(displayName);
-    console.log(highestScore);
-    console.log("connected to Facebook");
+      console.log(displayName);
+      console.log(highestScore);
+      console.log("connected to Facebook");
 
-  }
-  // The signed-in user info.
-  var user = result.user;
-  console.log(user);
-}).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  // The email of the user's account used.
-  var email = error.email;
-  // The firebase.auth.AuthCredential type that was used.
-  var credential = error.credential;
-  console.log("error code: " + errorCode);
-  console.log("error message: " + errorMessage);
+    }
+    // The signed-in user info.
+    var user = result.user;
+    console.log(user);
+  })
 
-  // ...
-});
+  .catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // The email of the user's account used.
+    var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    var credential = error.credential;
+    console.log("error code: " + errorCode);
+    console.log("error message: " + errorMessage);
+
+  });
 
 firebase.auth().signOut().then(function() {
   // Sign-out successful.
