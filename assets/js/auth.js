@@ -1,4 +1,4 @@
-console.log("new code loaded5");
+console.log("new code loaded 6");
 
 // Initialize Firebase
 var config = {
@@ -89,6 +89,7 @@ $("#fbIn").on("click", function() {
   console.log("logged in with FB");
   loginData.push(loginObj_fb);
   $("#allTimeHigh").html(highScore);
+  $("#player1").html(displayName);
   // highestScore = result.scores.high_score;
   // $("#highestScore").html(highestScore);
 });

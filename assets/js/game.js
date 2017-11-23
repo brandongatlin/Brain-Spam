@@ -47,7 +47,7 @@ $.ajax({
   })
 
   .done(function(response) {
-    console.log(response);
+    // console.log(response);
 
     //storing the array of results in the variable
     var results = response.results;
