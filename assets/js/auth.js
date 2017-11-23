@@ -1,4 +1,4 @@
-console.log("new code loaded");
+console.log("new code loaded2");
 
 // Initialize Firebase
 var config = {
