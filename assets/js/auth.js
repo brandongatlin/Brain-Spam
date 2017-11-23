@@ -1,4 +1,4 @@
-console.log("new code loaded 4");
+console.log("new code loaded 5");
 
 // Initialize Firebase
 var config = {
@@ -103,6 +103,8 @@ $("#fbIn").on("click", function() {
 $("#fbOut").on("click", function() {
   firebase.auth().signOut().then(function() {
     console.log("logged out of Facebook");
+    scoreData.push(scoreObj_fb);
+
   });
 });
 
