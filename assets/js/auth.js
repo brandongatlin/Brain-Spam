@@ -93,7 +93,7 @@ firebase.auth().signOut().then(function() {}).catch(function(error) {}); //end f
 $("#fbIn").on("click", function() {
   firebase.auth().signInWithRedirect(provider_fb);
   console.log("logged in with facebook");
-
+  var displayName = result.user.displayName;
   loginData.push(loginObj_fb);
 
 });
