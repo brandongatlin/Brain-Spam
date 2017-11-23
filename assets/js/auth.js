@@ -1,4 +1,4 @@
-console.log("new code loaded 1");
+console.log("new code loaded 2");
 
 // Initialize Firebase
 var config = {
@@ -21,6 +21,7 @@ var provider_fb = new firebase.auth.FacebookAuthProvider();
 var provider_gh = new firebase.auth.GithubAuthProvider();
 
 var displayName = "";
+var highScore = "";
 var highestScore = "";
 var facebook = "facebook";
 var github = "github";
