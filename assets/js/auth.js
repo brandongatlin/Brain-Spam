@@ -1,4 +1,4 @@
-console.log("new code loaded 6");
+console.log("new code loaded 7");
 
 // Initialize Firebase
 var config = {
@@ -92,8 +92,7 @@ firebase.auth().signOut().then(function() {}).catch(function(error) {}); //end f
 //log in fb
 $("#fbIn").on("click", function() {
   firebase.auth().signInWithRedirect(provider_fb);
-  console.log("logged in with FB");
-
+  console.log("logged in with facebook");
   loginData.push(loginObj_fb);
 
 });
@@ -117,5 +116,7 @@ $("#ghIn").on("click", function() {
 $("#ghOut").on("click", function() {
   firebase.auth().signOut().then(function() {
     console.log("logged out of Github");
+    scoreData.push(scoreObj_gh);
+
   });
 });
