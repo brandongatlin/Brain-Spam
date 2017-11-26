@@ -20,7 +20,7 @@ var scoreData = database.ref("/scores");
 var provider_fb = new firebase.auth.FacebookAuthProvider();
 var provider_gh = new firebase.auth.GithubAuthProvider();
 
-var displayName = user.displayName;
+var displayName = "";
 var highScore = "";
 var highestScore = "";
 var facebook = "facebook";
@@ -70,7 +70,6 @@ firebase.auth().getRedirectResult().then(function(result) {
     displayName = user.displayName;
     $("#player1").html(displayName);
 
-    loginData.push(loginObj_fb);
 
     // highestScore = result.scores.high_score;
     // $("#highestScore").html(highestScore);
@@ -95,6 +94,8 @@ firebase.auth().signOut().then(function() {}).catch(function(error) {}); //end f
 $("#fbIn").on("click", function() {
   firebase.auth().signInWithRedirect(provider_fb);
   console.log("logged in with facebook");
+  loginData.push(loginObj_fb);
+
 
 });
 
