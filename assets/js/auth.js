@@ -1,4 +1,4 @@
-console.log("new code loaded 2");
+console.log("new code loaded 3");
 
 // Initialize Firebase
 var config = {
@@ -70,6 +70,8 @@ firebase.auth().getRedirectResult().then(function(result) {
     displayName = user.displayName;
     $("#player1").html(displayName);
 
+    loginData.push(loginObj_fb);
+
     // highestScore = result.scores.high_score;
     // $("#highestScore").html(highestScore);
   }) //end firebase login sdk
@@ -93,8 +95,6 @@ firebase.auth().signOut().then(function() {}).catch(function(error) {}); //end f
 $("#fbIn").on("click", function() {
   firebase.auth().signInWithRedirect(provider_fb);
   console.log("logged in with facebook");
-  var displayName = result.user.displayName;
-  loginData.push(loginObj_fb);
 
 });
 
