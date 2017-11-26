@@ -67,7 +67,7 @@ firebase.auth().getRedirectResult().then(function(result) {
     }
     var user = result.user;
     console.log(user.displayName);
-    displayName = user.displayName;
+    displayName = result.user.displayName;
     $("#player1").html(displayName);
 
 
@@ -94,6 +94,7 @@ firebase.auth().signOut().then(function() {}).catch(function(error) {}); //end f
 $("#fbIn").on("click", function() {
   firebase.auth().signInWithRedirect(provider_fb);
   console.log("logged in with facebook");
+  console.log(loginObj_fb);
   loginData.push(loginObj_fb);
 
 
