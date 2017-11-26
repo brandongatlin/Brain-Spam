@@ -1,4 +1,4 @@
-console.log("new code loaded 3");
+console.log("new code loaded 4");
 
 // Initialize Firebase
 var config = {
@@ -20,7 +20,7 @@ var scoreData = database.ref("/scores");
 var provider_fb = new firebase.auth.FacebookAuthProvider();
 var provider_gh = new firebase.auth.GithubAuthProvider();
 
-var displayName = "";
+var displayName = user.displayName;
 var highScore = "";
 var highestScore = "";
 var facebook = "facebook";
