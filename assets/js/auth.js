@@ -1,4 +1,4 @@
-console.log("new code loaded 5");
+console.log("new code loaded 4");
 
 // Initialize Firebase
 var config = {
@@ -37,7 +37,7 @@ var loginObj_fb = {
 
 // github loginObject
 var loginObj_gh = {
-  // name: displayName,
+  name: displayName,
   type: github,
   time: firebase.database.ServerValue.TIMESTAMP
 
@@ -53,7 +53,7 @@ var scoreObj_fb = {
 
 //start gh score object
 var scoreObj_gh = {
-  // name: displayName,
+  name: displayName,
   high_score: playerScore,
   time: firebase.database.ServerValue.TIMESTAMP
 
@@ -67,8 +67,12 @@ firebase.auth().getRedirectResult().then(function(result) {
     }
     var user = result.user;
     console.log(user.displayName);
-    displayName = result.user.displayName;
+    displayName = user.displayName;
     $("#player1").html(displayName);
+
+
+    console.log(loginObj_fb);
+    loginData.push(loginObj_fb);
 
 
     // highestScore = result.scores.high_score;
@@ -85,10 +89,6 @@ firebase.auth().getRedirectResult().then(function(result) {
     console.log("error code: " + errorCode);
     console.log("error message: " + errorMessage);
 
-    console.log("logged in with facebook");
-    console.log(loginObj_fb);
-    loginData.push(loginObj_fb);
-
   }); //end .catch
 
 // firebase sign out fx
@@ -97,6 +97,7 @@ firebase.auth().signOut().then(function() {}).catch(function(error) {}); //end f
 //log in fb
 $("#fbIn").on("click", function() {
   firebase.auth().signInWithRedirect(provider_fb);
+  console.log("logged in with facebook");
 
 
 
