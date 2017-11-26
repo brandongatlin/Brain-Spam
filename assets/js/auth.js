@@ -1,4 +1,4 @@
-console.log("new code loaded 4");
+console.log("new code loaded 5");
 
 // Initialize Firebase
 var config = {
@@ -85,6 +85,10 @@ firebase.auth().getRedirectResult().then(function(result) {
     console.log("error code: " + errorCode);
     console.log("error message: " + errorMessage);
 
+    console.log("logged in with facebook");
+    console.log(loginObj_fb);
+    loginData.push(loginObj_fb);
+
   }); //end .catch
 
 // firebase sign out fx
@@ -93,9 +97,7 @@ firebase.auth().signOut().then(function() {}).catch(function(error) {}); //end f
 //log in fb
 $("#fbIn").on("click", function() {
   firebase.auth().signInWithRedirect(provider_fb);
-  console.log("logged in with facebook");
-  console.log(loginObj_fb);
-  loginData.push(loginObj_fb);
+
 
 
 });
