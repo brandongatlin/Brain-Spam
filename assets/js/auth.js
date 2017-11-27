@@ -71,10 +71,6 @@ firebase.auth().getRedirectResult().then(function(result) {
     $("#player1").html(displayName);
 
 
-    console.log(loginObj_fb);
-    loginData.push(loginObj_fb);
-
-
     // highestScore = result.scores.high_score;
     // $("#highestScore").html(highestScore);
   }) //end firebase login sdk
@@ -98,7 +94,8 @@ firebase.auth().signOut().then(function() {}).catch(function(error) {}); //end f
 $("#fbIn").on("click", function() {
   firebase.auth().signInWithRedirect(provider_fb);
   console.log("logged in with facebook");
-
+  console.log(loginObj_fb);
+  loginData.push(loginObj_fb);
 
 
 });
