@@ -18,11 +18,12 @@ var loginData = database.ref("/login");
 var scoreData = database.ref("/scores");
 
 var provider_fb = new firebase.auth.FacebookAuthProvider();
-var provider_gh = new firebase.auth.GithubAuthProvider();
+// var provider_gh = new firebase.auth.GithubAuthProvider();
 
-var displayName = "";
-var highScore = "";
-var highestScore = "";
+var displayName;
+var playerPic;
+var highScore;
+var highestScore;
 var facebook = "facebook";
 var github = "github";
 
@@ -59,6 +60,9 @@ firebase.auth().getRedirectResult().then(function(result) {
 
     displayName = user.displayName;
     $("#player1").html(displayName);
+
+    playerPic = user.metadata.photoURL;
+    $("#playerPic").html(playerPic);
 
     // facebook loginObject
     var loginObj_fb = {
