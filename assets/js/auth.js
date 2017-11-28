@@ -1,4 +1,4 @@
-console.log("new code loaded 6");
+console.log("new code loaded 7");
 
 // Initialize Firebase
 var config = {
@@ -27,32 +27,25 @@ var facebook = "facebook";
 var github = "github";
 
 
-// facebook loginObject
 
 
-// github loginObject
-var loginObj_gh = {
-  name: displayName,
-  type: github,
-  time: firebase.database.ServerValue.TIMESTAMP
+// // github loginObject
+// var loginObj_gh = {
+//   name: displayName,
+//   type: github,
+//   time: firebase.database.ServerValue.TIMESTAMP
+//
+// }; //end gh loginObject
 
-}; //end gh loginObject
 
-//fb score object
-var scoreObj_fb = {
-  name: displayName,
-  high_score: playerScore,
-  time: firebase.database.ServerValue.TIMESTAMP
 
-}; //end fb score obj
-
-//start gh score object
-var scoreObj_gh = {
-  name: displayName,
-  high_score: playerScore,
-  time: firebase.database.ServerValue.TIMESTAMP
-
-}; //end gh score object
+// //start gh score object
+// var scoreObj_gh = {
+//   name: displayName,
+//   high_score: playerScore,
+//   time: firebase.database.ServerValue.TIMESTAMP
+//
+// }; //end gh score object
 
 //start firebase auth sdk function
 firebase.auth().getRedirectResult().then(function(result) {
@@ -65,6 +58,7 @@ firebase.auth().getRedirectResult().then(function(result) {
     displayName = user.displayName;
     $("#player1").html(displayName);
 
+    // facebook loginObject
     var loginObj_fb = {
       name: displayName,
       type: facebook,
@@ -99,30 +93,36 @@ $("#fbIn").on("click", function() {
   firebase.auth().signInWithRedirect(provider_fb);
   console.log("logged in with facebook");
 
-
-
 });
 
 // log out fb
 $("#fbOut").on("click", function() {
   firebase.auth().signOut().then(function() {
     console.log("logged out of Facebook");
+
+    //fb score object
+    var scoreObj_fb = {
+      name: displayName,
+      high_score: playerScore,
+      time: firebase.database.ServerValue.TIMESTAMP
+
+    }; //end fb score obj
     scoreData.push(scoreObj_fb);
 
   });
 });
 
-$("#ghIn").on("click", function() {
-  firebase.auth().signInWithRedirect(provider_gh);
-  console.log("logged in with Github");
-  loginData.push(loginObj_gh);
-});
-
-// log out gh
-$("#ghOut").on("click", function() {
-  firebase.auth().signOut().then(function() {
-    console.log("logged out of Github");
-    scoreData.push(scoreObj_gh);
-
-  });
-});
+// $("#ghIn").on("click", function() {
+//   firebase.auth().signInWithRedirect(provider_gh);
+//   console.log("logged in with Github");
+//   loginData.push(loginObj_gh);
+// });
+//
+// // log out gh
+// $("#ghOut").on("click", function() {
+//   firebase.auth().signOut().then(function() {
+//     console.log("logged out of Github");
+//     scoreData.push(scoreObj_gh);
+//
+//   });
+// });
