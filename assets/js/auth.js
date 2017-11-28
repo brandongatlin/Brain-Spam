@@ -1,4 +1,4 @@
-console.log("new code loaded 7");
+console.log("new code loaded 8");
 
 // Initialize Firebase
 var config = {
@@ -55,6 +55,8 @@ firebase.auth().getRedirectResult().then(function(result) {
     }
     var user = result.user;
     console.log(user.displayName);
+    console.log(result);
+
     displayName = user.displayName;
     $("#player1").html(displayName);
 
