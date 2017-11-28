@@ -81,7 +81,7 @@ function getQuestion() {
 
 
 
-$(document).on("click", "li.answers", function() {
+$(document).on("click touchstart", "li.answers", function() {
   var usersGuess = $(this).html();
   var correctAnswer = results["0"].correct_answer;
 
