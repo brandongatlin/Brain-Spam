@@ -1,4 +1,4 @@
-console.log("new code loaded 9");
+console.log("new code loaded 1");
 
 // Initialize Firebase
 var config = {
@@ -21,9 +21,10 @@ var provider_fb = new firebase.auth.FacebookAuthProvider();
 // var provider_gh = new firebase.auth.GithubAuthProvider();
 
 var displayName;
+var biggestWinner;
 var playerPic;
 var highScore;
-var highestScore;
+var playerHighScore;
 var facebook = "facebook";
 var github = "github";
 
@@ -75,11 +76,9 @@ firebase.auth().getRedirectResult().then(function(result) {
     playerPic = user.photoURL;
     console.log(playerPic);
 
-    // $("#playerPic").append(playerPic);
     $("#playerPic").attr("src", playerPic);
 
-    // highestScore = result.scores.high_score;
-    // $("#highestScore").html(highestScore);
+
   }) //end firebase login sdk
 
   .catch(function(error) {
@@ -120,6 +119,20 @@ $("#fbOut").on("click", function() {
 
   });
 });
+
+//start write high score to score box
+database.ref("/scores").orderByChild("high_score").limitToLast(1).on("value", function(snapshot) {
+
+  var arr = Object.keys(snapshot.val());
+  highScore = snapshot.val()[arr[0]].high_score;
+  $("#allTimeHigh").html(highScore);
+
+  biggestWinner = snapshot.val()[arr[0]].name;
+  $("#biggestWinner").html(biggestWinner);
+
+}); //end write high score to scorebox
+
+//order result by value to get highest score
 
 // $("#ghIn").on("click", function() {
 //   firebase.auth().signInWithRedirect(provider_gh);
