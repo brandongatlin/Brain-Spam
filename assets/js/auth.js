@@ -1,4 +1,4 @@
-console.log("new code loaded 3");
+console.log("new code loaded 4");
 
 // Initialize Firebase
 var config = {
@@ -61,13 +61,6 @@ firebase.auth().getRedirectResult().then(function(result) {
     displayName = user.displayName;
     $("#player1").html(displayName);
 
-    playerPic = user.metadata.photoURL;
-    console.log(user.photoURL);
-
-    // $("#playerPic").append(playerPic);
-    $("#playerPic").attr("src", playerPic);
-
-
     // facebook loginObject
     var loginObj_fb = {
       name: displayName,
@@ -102,6 +95,12 @@ firebase.auth().signOut().then(function() {}).catch(function(error) {}); //end f
 $("#fbIn").on("click", function() {
   firebase.auth().signInWithRedirect(provider_fb);
   console.log("logged in with facebook");
+
+  playerPic = user.metadata.photoURL;
+  console.log(user.photoURL);
+
+  // $("#playerPic").append(playerPic);
+  $("#playerPic").attr("src", playerPic);
 
 });
 
