@@ -1,4 +1,4 @@
-console.log("new code loaded 9");
+console.log("new code loaded 1");
 
 // Initialize Firebase
 var config = {
@@ -62,6 +62,7 @@ firebase.auth().getRedirectResult().then(function(result) {
     $("#player1").html(displayName);
 
     playerPic = user.metadata.photoURL;
+    console.log(user.metadata.photoURL);
     $("#playerPic").append(playerPic);
 
     // facebook loginObject
