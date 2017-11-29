@@ -24,12 +24,9 @@ var displayName;
 var biggestWinner;
 var playerPic;
 var highScore;
-var playerHighScore;
+// var playerHighScore;
 var facebook = "facebook";
 var github = "github";
-
-
-
 
 // // github loginObject
 // var loginObj_gh = {
@@ -38,7 +35,6 @@ var github = "github";
 //   time: firebase.database.ServerValue.TIMESTAMP
 //
 // }; //end gh loginObject
-
 
 
 // //start gh score object

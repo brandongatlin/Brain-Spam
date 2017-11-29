@@ -1,7 +1,6 @@
 $("#logOffFacebook").hide();
 $("#ghOut").hide();
 
-
 // Clicking the Start Button will Start the Game
 $("#startBtn").on("click", function() {
   resetGame();
@@ -26,7 +25,7 @@ var playerScore = 0;
 
 var pointValue = "";
 
-// Wraped my ajax call code in a function
+// Wraped ajax call code in a function
 function getQuestion() {
 
   // The Function that renders the Question with Answer Choices
@@ -68,18 +67,13 @@ function getQuestion() {
 
     var choices = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3];
     var arr = shuffle(choices);
-    //console.log(arr);
-
 
     // Display the choices
     document.getElementById("choices-div").appendChild(makeUL(arr));
 
-
   }); //END ajax .done
 
 } //END getQuestion
-
-
 
 $(document).on("click touchstart", "li.answers", function() {
   var usersGuess = $(this).html();
@@ -95,7 +89,6 @@ $(document).on("click touchstart", "li.answers", function() {
     $("#playerScore").addClass("animated bounce");
     $("#playerScore").css("color", "lime");
 
-    // console.log("point value: " + pointValue);
     playerScore = playerScore + pointValue;
     $("#choices-div").empty();
     $("#question").empty();
@@ -108,15 +101,13 @@ $(document).on("click touchstart", "li.answers", function() {
     $("#playerScore").css("color", "red");
     $("#playerScore").addClass("animated bounce");
 
-
-
-    console.log("point value: -" + pointValue);
+    // console.log("point value: -" + pointValue);
     playerScore = playerScore - pointValue;
     $("#choices-div").empty();
     $("#question").empty();
     $("#playerScore").html(playerScore);
   }
-});
+}); // end onclick touchstart
 
 function shuffle(array) {
   var currentIndex = array.length,
@@ -150,15 +141,11 @@ $("#tableContainer").on("click", ".gameButton", function() {
   $("#playerScore").removeClass("animated bounce");
   $(".correctOrWrongText").removeClass("animated bounce");
 
-
-
-
   // *******************************************
 
   // this allows me to make an ajax call to my api to get a new question
   // every time I click a .gameButton
   getQuestion();
-
 
   // In the on click of the .gameButton we get the point value using its data-points
   // attribute. data-points will be a string so I parse it into an integer.
